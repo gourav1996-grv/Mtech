@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Microservice App - Frontend</title>
+</head>
+
+<body>
+    <h1>Frontend-VM</h1>
+    <h2>User Management System</h2>
+
+    <button onclick="checkBackend()">Check Backend Status</button>
+    <button onclick="getUsers()">Get Users</button>
+
+    <div id="result"></div>
+
+    <script>
+        const BACKEND_API = 'http://10.0.2.15:3000';
+
+        function checkBackend() {
+            fetch(BACKEND_API + '/status')
+                .then(r => r.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML =
+                        '<p>Backend Status: ' + JSON.stringify(data) + '</p>';
+                });
+        }
+
+        function getUsers() {
+            alert('Frontend calling Backend API at 10.0.2.15:3000');
+        }
+    </script>
+</body>
+
+</html>

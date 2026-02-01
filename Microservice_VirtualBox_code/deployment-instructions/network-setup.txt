@@ -1,0 +1,37 @@
+VirtualBox NAT Network Configuration
+====================================
+
+1. Create NAT Network:
+   - Open VirtualBox Manager
+   - Go to File → Tools → Network Manager
+   - Click "NAT Networks" tab
+   - Click "Create" button
+   
+2. Configure NAT Network:
+   - Name: NatNetwork
+   - IPv4 Prefix: 10.0.2.0/24
+   - Enable DHCP: Yes
+   - Click "Apply"
+
+3. Assign Network to VMs:
+   - For each VM (Backend, Frontend, Database):
+     * Right-click VM → Settings
+     * Network → Adapter 1
+     * Enable Network Adapter: Checked
+     * Attached to: NAT Network
+     * Name: NatNetwork
+     * Click OK
+
+4. Verify IP Addresses:
+   After starting VMs, check IP with:
+   $ hostname -I
+   
+    IPs:
+   - Backend-VM: 10.0.2.15
+   - Frontend-VM: 10.0.2.5
+   - Database-VM: 10.0.2.4
+
+5. Test Connectivity:
+   $ ping 10.0.2.15
+   $ ping 10.0.2.5
+   $ ping 10.0.2.4

@@ -1,0 +1,15 @@
+{
+    "name": "backend-api-service",
+    "version": "1.0.0",
+    "description": "Backend REST API for microservice application",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "cors": "^2.8.5"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+}

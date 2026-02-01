@@ -1,0 +1,36 @@
+Virtual Machine Configuration Details
+=====================================
+
+VM Specifications:
+- Base Memory: 2048 MB (2 GB)
+- Processors: 2 CPUs
+- Video Memory: 16 MB
+- Hard Disk: 20 GB (VDI, dynamically allocated)
+- OS: Linux Mint 22.1 XFCE 64-bit
+
+Backend-VM Configuration:
+- Hostname: backend-vm
+- IP Address: 10.0.2.15
+- Service Port: 3000
+- Service Directory: ~/api-service
+- Start Command: node server.js
+
+Frontend-VM Configuration:
+- Hostname: frontend-vm
+- IP Address: 10.0.2.5
+- Service Port: 8080
+- Service Directory: ~/frontend-app
+- Start Command: python3 -m http.server 8080
+
+Database-VM Configuration:
+- Hostname: database-vm
+- IP Address: 10.0.2.4
+- Service Port: 5000
+- Service Directory: ~/data-service
+- Start Command: node dataserver.js
+
+Network Adapter Settings:
+- Adapter 1: NAT Network (NatNetwork)
+- Adapter Type: Intel PRO/1000 MT Desktop
+- Promiscuous Mode: Deny
+- Cable Connected: Yes
